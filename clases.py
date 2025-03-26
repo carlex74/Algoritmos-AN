@@ -26,22 +26,28 @@ class Grafica():
        # Dibujar el segmento entre los puntos
         return plt.plot([p1[0], p2[0]], [p1[1], p2[1]], color='green', linestyle='--', linewidth=2)
 
-    def graficar(self,x_range=[-10,10],y_range=[-10,10]):
-    
-        plt.plot(self.x, self.y, color='blue', label='f(x)')
-        plt.xlabel('x')
-        plt.ylabel('f(x)')
-        plt.title('Gráfica de la función')
-        plt.grid(True)
-        plt.legend()
+    def graficar(self, x_range=[-10, 10], y_range=[-10, 10]):
+        # Crear la figura y los ejes
+        fig, ax = plt.subplots()
+
+        # Graficar la función
+        ax.plot(self.x, self.y, color='blue', label='f(x)')
+        ax.set_xlabel('x')
+        ax.set_ylabel('f(x)')
+        ax.set_title('Gráfica de la función')
+        ax.grid(True)
+        ax.legend()
 
         # Agregar ejes X e Y
-        plt.axhline(0, color='black', linewidth=1)  # Eje X
-        plt.axvline(0, color='black', linewidth=1)  # Eje Y
+        ax.axhline(0, color='black', linewidth=1)  # Eje X
+        ax.axvline(0, color='black', linewidth=1)  # Eje Y
 
-        plt.xlim(x_range[0],x_range[1])  # Ajustar los valores de X según el encuadre deseado
-        plt.ylim(y_range[0],y_range[1])  # Ajustar los valores de Y según el encuadre deseado
+        # Ajustar los valores de X e Y según el encuadre deseado
+        ax.set_xlim(x_range[0], x_range[1])
+        ax.set_ylim(y_range[0], y_range[1])
 
+        # Retornar la figura y los ejes para manipulación futura
+        return fig,ax
     
     def show_graf(self):
         plt.show()
