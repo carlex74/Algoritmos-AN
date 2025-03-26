@@ -15,6 +15,9 @@ def funcion(x):
 def formuloBiseccion(xl,xu):
     return (xl+xu)/2
 
+def errorAproximado(xr_ant,xr):
+    
+    return abs((xr-xr_ant)/xr)*100
 
 f_prueba=Grafica(funcion)
 f_prueba.set_range(-10,10,500) #Setea el rango que matplotlib va a graficar de la funcion   
