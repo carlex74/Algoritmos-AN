@@ -8,7 +8,7 @@ def tolerancia(cantCifrasSign):
 
 
 def funcion(x):
-    return x**3 - 6*x**2 + 11*x - 6.1
+    return -0.5 * x**3 + 2.5 * x + 4.5
 
 def formuloBiseccion(xl,xu):
     return (xl+xu)/2
@@ -18,8 +18,8 @@ def errorAproximado(xu,xl):
 
 
 xr=None
-xl=1.50
-xu=2.50
+xl=5
+xu=10
 cantCifrasSign = 6
 tol = tolerancia(cantCifrasSign)
 print(tol)
